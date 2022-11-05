@@ -1,0 +1,22 @@
+{
+  "name": "tp4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ColaSalidaLocal.test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MateoMigone/Tp4-Migone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MateoMigone/Tp4-Migone/issues"
+  },
+  "homepage": "https://github.com/MateoMigone/Tp4-Migone#readme",
+  "dependencies": {
+    "jest": "^29.2.2"
+  }
+}
