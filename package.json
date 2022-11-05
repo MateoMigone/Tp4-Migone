@@ -4,7 +4,8 @@
   "description": "",
   "main": "ColaSalidaLocal.test.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "testpush": "git add . && git commit -m \"TDD iteration\" && git push && jest"
   },
   "repository": {
     "type": "git",
