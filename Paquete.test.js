@@ -22,3 +22,9 @@ test("error al crear paquete sin productos", () => {
         paquete = new Paquete(1);
     }).toThrow("Debe ingresar producto/s");
 });
+
+test("error al crear paquete sin urgencia", () => {
+    expect(() => {
+        paquete = new Paquete(1,[["remera",4],["buzo",2]]);
+    }).toThrow("Debe ingresar urgencia");
+});
