@@ -18,3 +18,9 @@ test("crear paquete con productos", () => {
     expect(paquete.listaProductos[1][0]).toBe("buzo");
     expect(paquete.listaProductos[1][1]).toBe(2);
 });
+
+test("error al crear paquete sin productos", () => {
+    expect(() => {
+        paquete = new Paquete(1);
+    }).toThrow("Debe ingresar producto/s");
+});
