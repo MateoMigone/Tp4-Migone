@@ -5,7 +5,7 @@ test("crear paquete", () => {
     expect (paquete.destino).toBe(1);
 });
 
-test("crear paquete", () => {
+test("error al crear paquete sin destino", () => {
     paquete = new Paquete()
-    expect(paquete.destino).toThrow(new Error("Debe ingresar destino"));
+    expect(paquete.destino).toThrow("Debe ingresar destino");
 });
