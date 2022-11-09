@@ -1,12 +1,13 @@
 const Paquete = require('./Paquete');
 
 test("crear paquete", () => {
-    paquete = new Paquete(1,[["remera",4],["buzo",2]]);
+    paquete = new Paquete(1,[["remera",4],["buzo",2]],6);
     expect(paquete.destino).toBe(1);
     expect(paquete.listaProductos[0][0]).toBe("remera");
     expect(paquete.listaProductos[0][1]).toBe(4);
     expect(paquete.listaProductos[1][0]).toBe("buzo");
     expect(paquete.listaProductos[1][1]).toBe(2);
+    expect(paquete.urgencia).toBe(6);
     
 });
 
