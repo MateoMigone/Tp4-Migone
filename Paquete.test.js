@@ -13,5 +13,5 @@ test("error al crear paquete sin destino", () => {
 
 test("crear paquete con productos", () => {
     paquete = new Paquete(1,[["remera",4],["buzo",2]])
-    expect(paquete.listaProductos).toBe([["remera",4],["buzo",2]]);
+    expect(paquete.listaProductos[0]).toBe(["remera",4]);
 });
