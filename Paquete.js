@@ -1,5 +1,5 @@
 function Paquete (dest){
-    if (dest === null){
+    if (dest === undefined){
         throw new Error("Debe ingresar destino");
     }
     this.destino = dest;
