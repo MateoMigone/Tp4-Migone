@@ -1,4 +1,4 @@
-function Paquete (dest,lisProd){
+function Paquete (dest,lisProd,urg){
     if (dest === undefined){
         throw new Error("Debe ingresar destino");
     }
@@ -7,6 +7,7 @@ function Paquete (dest,lisProd){
     }
     this.destino = dest;
     this.listaProductos = lisProd;
+    this.urgencia = urg;
 }
 
 module.exports = Paquete;
