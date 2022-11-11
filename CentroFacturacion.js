@@ -7,7 +7,14 @@ function CentroFacturacion(capCol){
         this.colaEntrada.push(paquete);
     }
     this.procesarPaquetes = function(){
-        this.colaSalida.push(this.colaEntrada.pop());
+        let p1 = this.colaSalida.shift();
+        let p2 = this.colaSalida.shift();
+        let p3 = this.colaSalida.shift();
+        let p4 = this.colaSalida.shift();
+        let p5 = this.colaSalida.shift();
+
+        this.colaEntrada = [p1,p4];
+        this.colaSalida = [p5,p2,p3];
     }
 
 }

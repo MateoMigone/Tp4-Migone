@@ -28,10 +28,10 @@ test("procesar paquete", () => {
 test("procesar varios paquetes cuando hay mas de 3 en la cola", () => {
     centroFacturacion = new CentroFacturacion(5);
     paquete1 = new Paquete(1,[["remera",4],["buzo",2]],8);
-    paquete2 = new Paquete(1,[["remera",10],["buzo",8]],6);
-    paquete3 = new Paquete(1,[["teclado",5]],6);
-    paquete4 = new Paquete(1,[["pantalon",3],["campera",1]],8);
-    paquete5 = new Paquete(1,[["celular",3]],4);
+    paquete2 = new Paquete(2,[["remera",10],["buzo",8]],6);
+    paquete3 = new Paquete(2,[["teclado",5]],6);
+    paquete4 = new Paquete(4,[["pantalon",3],["campera",1]],8);
+    paquete5 = new Paquete(3,[["celular",3]],4);
     centroFacturacion.recibirPaquete(paquete1);
     centroFacturacion.recibirPaquete(paquete2);
     centroFacturacion.recibirPaquete(paquete3);
