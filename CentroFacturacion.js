@@ -3,6 +3,9 @@ function CentroFacturacion(capCol){
     this.capacidadCola = capCol;
     this.colaEntrada = [];
     this.colaSalida = [];
+    this.recibirPaquete = function(){
+        
+    }
 }
 
 module.exports = CentroFacturacion;
