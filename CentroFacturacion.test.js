@@ -11,6 +11,7 @@ test("crear centro facturacion ", () => {
 
 test("recibir paquete", () => {
     centroFacturacion = new CentroFacturacion(5);
+    paquete = new Paquete(1,[["remera",4],["buzo",2]],6)
     centroFacturacion.recibirPaquete(paquete);
     expect(centroFacturacion.colaEntrada[0]).toBe(paquete);
 });
