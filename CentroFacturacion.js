@@ -6,6 +6,10 @@ function CentroFacturacion(capCol){
     this.recibirPaquete = function(paquete){
         this.colaEntrada.push(paquete);
     }
+    this.procesarPaquete = function(){
+        
+    }
+
 }
 
 module.exports = CentroFacturacion;
