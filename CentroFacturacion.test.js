@@ -40,8 +40,8 @@ test("procesar varios paquetes cuando hay mas de 3 en la cola", () => {
     centroFacturacion.procesarPaquetes();
     expect(centroFacturacion.colaEntrada[0]).toBe(paquete1);
     expect(centroFacturacion.colaEntrada[1]).toBe(paquete4);
-    expect(centroFacturacion.colaSalida[0]).toBe(paquete3);
+    expect(centroFacturacion.colaSalida[0]).toBe(paquete5);
     expect(centroFacturacion.colaSalida[1]).toBe(paquete2);
-    expect(centroFacturacion.colaSalida[2]).toBe(paquete5);
+    expect(centroFacturacion.colaSalida[2]).toBe(paquete3);
 });
 
