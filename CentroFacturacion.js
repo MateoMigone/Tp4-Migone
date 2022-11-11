@@ -3,8 +3,8 @@ function CentroFacturacion(capCol){
     this.capacidadCola = capCol;
     this.colaEntrada = [];
     this.colaSalida = [];
-    this.recibirPaquete = function(){
-        
+    this.recibirPaquete = function(paquete){
+        this.colaEntrada.push(paquete);
     }
 }
 
