@@ -7,7 +7,7 @@ function CentroFacturacion(capCol){
         this.colaEntrada.push(paquete);
     }
     this.procesarPaquete = function(){
-        this.colaSalida.push(colaEntrada.pop());
+        this.colaSalida.push(this.colaEntrada.pop());
     }
 
 }
