@@ -34,10 +34,14 @@ test("procesar varios paquetes cuando hay mas de 3 en la cola", () => {
     paquete5 = new Paquete(3,[["celular",3]],4);
     centroFacturacion.recibirPaquete(paquete1);
     centroFacturacion.recibirPaquete(paquete2);
+    centroFacturacion.recibirPaquete(paquete3);
+    centroFacturacion.recibirPaquete(paquete4);
+    centroFacturacion.recibirPaquete(paquete5);
     centroFacturacion.procesarPaquetes();
-    expect(centroFacturacion.colaEntrada[0]).toBe(undefined);
-    expect(centroFacturacion.colaEntrada[1]).toBe(undefined);
-    expect(centroFacturacion.colaSalida[0]).toBe(paquete2);
-    expect(centroFacturacion.colaSalida[1]).toBe(paquete1);
+    expect(centroFacturacion.colaEntrada[0]).toBe(paquete1);
+    expect(centroFacturacion.colaEntrada[1]).toBe(paquete4);
+    expect(centroFacturacion.colaSalida[0]).toBe(paquete5);
+    expect(centroFacturacion.colaSalida[1]).toBe(paquete2);
+    expect(centroFacturacion.colaSalida[2]).toBe(paquete3);
 });
 
