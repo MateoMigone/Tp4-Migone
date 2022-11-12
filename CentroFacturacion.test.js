@@ -16,16 +16,12 @@ test("recibir paquete", () => {
     expect(centroFacturacion.colaEntrada[0]).toBe(paquete);
 });
 
-test("procesar paquete", () => {
+test("verificar espacio en cola", () => {
     centroFacturacion = new CentroFacturacion(5);
-    paquete = new Paquete(1,[["remera",4],["buzo",2]],6)
-    centroFacturacion.recibirPaquete(paquete);
-    centroFacturacion.procesarPaquetes();
-    expect(centroFacturacion.colaEntrada[0]).toBe(undefined);
-    expect(centroFacturacion.colaSalida[0]).toBe(paquete);
+    expect(centroFacturacion.espacioEnCola()).toBe(5);
 });
 
-test("procesar varios paquetes cuando hay mas de 3 en la cola", () => {
+test("procesar paquetes", () => {
     centroFacturacion = new CentroFacturacion(5);
     paquete1 = new Paquete(1,[["remera",4],["buzo",2]],8);
     paquete2 = new Paquete(2,[["remera",10],["buzo",8]],6);
