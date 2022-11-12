@@ -7,8 +7,8 @@ function CentroFacturacion(capCol){
         this.colaEntrada.push(paquete);
     }
     this.procesarPaquetes = function(){
-        this.colaEntrada.sort((a, b) => a[2] - b[2]);
-        for(let i=0; i < 3; i++){
+        this.colaEntrada.sort((a, b) => a.urgencia - b.urgencia);
+        for(let i=0; i < this.capacidadProcesamiento; i++){
             this.colaSalida.push(this.colaEntrada.shift());
         }
     }
