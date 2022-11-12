@@ -11,9 +11,10 @@ function CentroFacturacion(capCol){
         for(let i=0; i < this.capacidadProcesamiento; i++){
             this.colaSalida.push(this.colaEntrada.shift());
         }
+    }
     this.espacioEnCola = function(){
         
-    }
+    
     }
 
 }
