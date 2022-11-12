@@ -13,7 +13,7 @@ function CentroFacturacion(capCol){
         }
     }
     this.espacioEnCola = function(){
-        return (this.capacidadCola - this.colaEntrada.lenght - this.colaSalida.length);
+        return (this.capacidadCola - this.colaEntrada.length - this.colaSalida.length);
     }
 
 }
