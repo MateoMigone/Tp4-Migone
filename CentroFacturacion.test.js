@@ -16,7 +16,7 @@ test("recibir paquete", () => {
     expect(centroFacturacion.colaEntrada[0]).toBe(paquete);
 });
 
-test("verificar espacio en cola", () => {
+test("consultar cuanto espacio hay en la cola", () => {
     centroFacturacion = new CentroFacturacion(5);
     expect(centroFacturacion.espacioEnCola()).toBe(5);
 });
