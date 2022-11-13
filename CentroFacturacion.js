@@ -5,7 +5,6 @@ function CentroFacturacion(capCol){
     if (capCol === undefined){
         throw new Error("Debe ingresar capacidad de cola");
     }
-
     this.capacidadProcesamiento = 3;
     this.capacidadCola = capCol;
     this.colaEntrada = [];

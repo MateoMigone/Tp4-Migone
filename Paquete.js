@@ -1,12 +1,6 @@
 function Paquete (dest,lisProd,urg){
-    if (dest === undefined){
-        throw new Error("Debe ingresar destino");
-    }
-    if (lisProd === undefined){
-        throw new Error("Debe ingresar producto/s");
-    }
-    if (urg === undefined){
-        throw new Error("Debe ingresar urgencia");
+    if (dest === undefined || lisProd === undefined || urg === undefined){
+        throw new Error("Debe ingresar todos los datos necesarios");
     }
     this.destino = dest;
     this.listaProductos = lisProd;
