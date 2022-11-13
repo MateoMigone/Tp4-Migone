@@ -18,7 +18,15 @@ test("recibir paquete", () => {
 
 test("consultar cuanto espacio hay en la cola", () => {
     centroFacturacion = new CentroFacturacion(5);
-    expect(centroFacturacion.espacioEnCola()).toBe(5);
+    paquete1 = new Paquete(1,[["remera",4],["buzo",2]],8);
+    paquete2 = new Paquete(2,[["remera",10],["buzo",8]],6);
+    paquete3 = new Paquete(2,[["teclado",5]],6);
+    paquete4 = new Paquete(4,[["pantalon",3],["campera",1]],8);
+    centroFacturacion.recibirPaquete(paquete1);
+    centroFacturacion.recibirPaquete(paquete2);
+    centroFacturacion.recibirPaquete(paquete3);
+    centroFacturacion.recibirPaquete(paquete4);
+    expect(centroFacturacion.espacioEnCola()).toBe(1);
 });
 
 test("procesar paquetes", () => {
