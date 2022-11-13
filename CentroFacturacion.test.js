@@ -57,7 +57,7 @@ test("error en capacidad de cola al crear centro de facturacion", () => {
 
 test("error al crear centro de facturacion sin capacidad de cola", () => {
     expect(() => {
-        centroFacturacion = new CentroFacturacion(8);
+        centroFacturacion = new CentroFacturacion();
     }).toThrow("Debe ingresar capacidad de cola");
 });
 
