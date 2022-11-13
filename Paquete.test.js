@@ -28,3 +28,10 @@ test("error al crear paquete sin urgencia", () => {
         paquete = new Paquete(1,[["remera",4],["buzo",2]]);
     }).toThrow("Debe ingresar todos los datos necesarios");
 });
+
+test("error al crear paquete con lista de productos vacia", () => {
+    expect(() => {
+        paquete = new Paquete(1,[],6);
+    }).toThrow("Debe ingresar lista con un producto por lo menos");
+});
+
