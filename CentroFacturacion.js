@@ -1,4 +1,7 @@
 function CentroFacturacion(capCol){
+    if (capCol < 3 || capCol > 6){
+        throw new Error("Capacidad de cola debe ser entre 3 y 6");
+    }
     this.capacidadProcesamiento = 3;
     this.capacidadCola = capCol;
     this.colaEntrada = [];
