@@ -1,4 +1,4 @@
-function Local(){
+function Local(nom){
     
 };
 
