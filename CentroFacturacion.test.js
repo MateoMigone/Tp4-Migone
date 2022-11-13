@@ -51,6 +51,6 @@ test("procesar paquetes", () => {
 
 test("error en capacidad de cola al crear centro de facturacion", () => {
     expect(() => {
-        centroFacturacion = new CentroFacturacion(8);
+        centroFacturacion = new CentroFacturacion();
     }).toThrow("Capacidad de cola debe ser entre 3 y 6");
 });
