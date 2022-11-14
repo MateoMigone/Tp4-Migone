@@ -10,9 +10,8 @@ function Local(nom){
         paquete = new Paquete(destino,listaProductos,urgencia);
         this.colaSalida.push(paquete);
     };
-    this.pasarPaquete = function(paquete,centro){
-        this.colaSalida.shift();
-        centro.colaEntrada.push(paquete);
+    this.pasarPaquete = function(centro){
+        centro.colaEntrada.push(this.colaSalida.shift());
     }
 }
 
