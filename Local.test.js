@@ -31,5 +31,5 @@ test("pasar paquete", () => {
     local.pasarPaquete(local.colaSalida[0],centroFacturacion);
     expect(local.colaSalida.length).toBe(0);
     expect(centroFacturacion.colaEntrada.length).toBe(1);
-    expect(centroFacturacion.colaEntrada[0].numero).toBe(0);
+    expect(centroFacturacion.colaEntrada[0].numero).toBe(0); 
 });
