@@ -10,7 +10,9 @@ function Local(nom){
         paquete = new Paquete(destino,listaProductos,urgencia);
         this.colaSalida.push(paquete);
     };
-    
+    this.pasarPaquete = function(){
+        
+    }
 }
 
 module.exports = Local;
