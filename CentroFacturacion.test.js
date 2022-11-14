@@ -5,6 +5,8 @@ var centroFacturacion;
 var paquete0;
 var paquete1;
 var paquete2;
+var paquete3;
+var paquete4;
 beforeEach(function () {
     centroFacturacion = new CentroFacturacion(5);
     Paquete.prototype.numero = 0;
