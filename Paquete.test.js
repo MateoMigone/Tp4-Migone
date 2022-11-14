@@ -1,6 +1,8 @@
 const Paquete = require('./Paquete');
 
 var paquete0;
+var paquete1;
+var paquete2;
 beforeEach(function () {
     Paquete.prototype.numero = 0;
     paquete0 = new Paquete(1,[["remera",4],["buzo",2]],6);
