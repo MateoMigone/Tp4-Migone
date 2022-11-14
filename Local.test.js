@@ -1,5 +1,6 @@
 const CentroFacturacion = require('./CentroFacturacion');
 const Local = require('./Local');
+const Paquete = require('./Paquete');
 
 var localA;
 var localB;
@@ -9,7 +10,6 @@ beforeEach(function () {
     localA = new Local("A");
     localB = new Local("B");
     centroFacturacion = new CentroFacturacion(5);
-    generarPaquete0EnLocalA = localA.generarPaquete(1,[["remera",4],["buzo",2]],8);
 });
 
 test("crear local", () => {
@@ -18,7 +18,7 @@ test("crear local", () => {
 });
 
 test("generar paquetes en distintos locales", () => {
-    generarPaquete0EnLocalA;
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],8);
     localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
     localA.generarPaquete(2,[["teclado",5]],6);
     localB.generarPaquete(1,[["remera",4],["buzo",2]],6);
@@ -33,7 +33,7 @@ test("generar paquetes en distintos locales", () => {
 });
 
 test("pasar paquete", () => {
-    generarPaquete0EnLocalA;
+    Paquete.prototype.numero = NaN;
     localA.pasarPaquete(centroFacturacion);
     expect(localA.colaSalida.length).toBe(0);
     expect(centroFacturacion.colaEntrada.length).toBe(1);
