@@ -30,6 +30,6 @@ test("pasar paquete", () => {
     local.generarPaquete(1,[["remera",4],["buzo",2]],6);
     local.pasarPaquete(local.colaSalida[0],centroFacturacion);
     expect(local.colaSalida.length).toBe(0);
-    expect(local.colaSalida.length).toBe(1);
-    expect(centroFacturacion.colaSalida[0].numero).toBe(0);
+    expect(centroFacturacion.colaEntrada.length).toBe(1);
+    expect(centroFacturacion.colaEntrada[0].numero).toBe(0);
 });
