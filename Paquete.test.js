@@ -1,21 +1,23 @@
 const Paquete = require('./Paquete');
 
-test("crear paquete", () => {
-    Paquete.prototype.numero = 0;
-    paquete = new Paquete(1,[["remera",4],["buzo",2]],6);
-    expect(paquete.destino).toBe(1);
-    expect(paquete.listaProductos[0][0]).toBe("remera");
-    expect(paquete.listaProductos[0][1]).toBe(4);
-    expect(paquete.listaProductos[1][0]).toBe("buzo");
-    expect(paquete.listaProductos[1][1]).toBe(2);
-    expect(paquete.urgencia).toBe(6);
-});
-
-test("crear dos paquetes con distintos numeros de paquete", () => {
+var paquete0;
+beforeEach(function () {
     Paquete.prototype.numero = 0;
     paquete0 = new Paquete(1,[["remera",4],["buzo",2]],6);
     paquete1 = new Paquete(2,[["libro",6],["lapicera",7]],6);
     paquete2 = new Paquete(3,[["bolso",1],["collar",2]],4);
+});
+
+test("crear paquete", () => {
+    expect(paquete0.destino).toBe(1);
+    expect(paquete0.listaProductos[0][0]).toBe("remera");
+    expect(paquete0.listaProductos[0][1]).toBe(4);
+    expect(paquete0.listaProductos[1][0]).toBe("buzo");
+    expect(paquete0.listaProductos[1][1]).toBe(2);
+    expect(paquete0.urgencia).toBe(6);
+});
+
+test("crear vario paquetes con distintos numeros de paquete", () => {
     expect(paquete0.numero).toBe(0);
     expect(paquete1.numero).toBe(1);
     expect(paquete2.numero).toBe(2);
