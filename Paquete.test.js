@@ -16,7 +16,7 @@ test("crear paquete", () => {
     expect(paquete0.listaProductos[0][1]).toBe(4);
     expect(paquete0.listaProductos[1][0]).toBe("buzo");
     expect(paquete0.listaProductos[1][1]).toBe(2);
-    expect(paquete0.urgencia).toBe(6);
+    expect(paquete0.urgencia).toBe(8);
 });
 
 test("crear vario paquetes con distintos numeros de paquete", () => {

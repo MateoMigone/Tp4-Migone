@@ -11,7 +11,7 @@ function Local(nom){
         this.colaSalida.push(paquete);
     };
     this.pasarPaquete = function(paquete,centro){
-        local.colaSalida.shift();
+        this.colaSalida.shift();
         centro.colaEntrada.push(paquete);
     }
 }
