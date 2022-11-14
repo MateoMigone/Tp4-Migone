@@ -7,13 +7,21 @@ test("crear local", () => {
 });
 
 test("generar paquetes", () => {
-    local = new Local("A");
-    local.generarPaquete(1,[["remera",4],["buzo",2]],6);
-    local.generarPaquete(2,[["remera",10],["buzo",8]],6);
-    local.generarPaquete(2,[["teclado",5]],6);
-    expect(local.colaSalida[0].numero).toBe(0);
-    expect(local.colaSalida[1].numero).toBe(1);
-    expect(local.colaSalida[2].numero).toBe(2);
+    localA = new Local("A");
+    localB = new Local("B");
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],6);
+    localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
+    localA.generarPaquete(2,[["teclado",5]],6);
+    localB.generarPaquete(1,[["remera",4],["buzo",2]],6);
+    localB.generarPaquete(2,[["remera",10],["buzo",8]],6);
+    localB.generarPaquete(2,[["teclado",5]],6);
+
+    expect(localA.colaSalida[0].numero).toBe(0);
+    expect(localA.colaSalida[1].numero).toBe(1);
+    expect(localA.colaSalida[2].numero).toBe(2);
+    expect(localB.colaSalida[0].numero).toBe(3);
+    expect(localB.colaSalida[1].numero).toBe(4);
+    expect(localB.colaSalida[2].numero).toBe(5);
 });
 
 
