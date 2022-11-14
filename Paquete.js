@@ -8,6 +8,7 @@ function Paquete (dest,lisProd,urg){
     this.destino = dest;
     this.listaProductos = lisProd;
     this.urgencia = urg;
+    this.numero = Paquete.prototype.numero++;
 }
 
 module.exports = Paquete;
