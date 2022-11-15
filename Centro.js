@@ -1,11 +1,5 @@
-function CentroFacturacion(capCol){
-    if (capCol < 3 || capCol > 6){
-        throw new Error("Capacidad de cola debe ser entre 3 y 6");
-    }
-    if (capCol === undefined){
-        throw new Error("Debe ingresar capacidad de cola");
-    }
-    this.capacidadProcesamiento = 3;
+function Centro(capCol){
+    this.capacidadProcesamiento;
     this.capacidadCola = capCol;
     this.colaEntrada = [];
     this.colaSalida = [];
@@ -27,6 +21,5 @@ function CentroFacturacion(capCol){
             centro.recibirPaquete(this.colaSalida.shift());
         }
     }
-}
 
-module.exports = CentroFacturacion;
+}

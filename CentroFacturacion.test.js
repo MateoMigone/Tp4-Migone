@@ -2,6 +2,7 @@ const CentroFacturacion = require('./CentroFacturacion');
 const Paquete = require('./Paquete');
 
 var centroFacturacion;
+
 var paquete0;
 var paquete1;
 var paquete2;
@@ -51,15 +52,33 @@ test("procesar paquetes", () => {
     expect(centroFacturacion.colaSalida[2]).toBe(paquete2);
 });
 
+test("pasar paquetes", () => {
+    centroFacturacion.recibirPaquete(paquete0);
+    centroFacturacion.recibirPaquete(paquete1);
+    centroFacturacion.recibirPaquete(paquete2);
+    centroFacturacion.recibirPaquete(paquete3);
+    centroFacturacion.recibirPaquete(paquete4);
+    centroFacturacion.procesarPaquetes();
+    centroFacturacion.pasarPaquetes(centroFacturacion2);
+    expect(centroFacturacion.colaEntrada[0]).toBe(paquete0);
+    expect(centroFacturacion.colaEntrada[1]).toBe(paquete3);
+    expect(centroFacturacion.colaSalida.length).toBe(0);
+    expect(centroFacturacion2.colaEntrada[0]).toBe(paquete4);
+    expect(centroFacturacion2.colaEntrada[1]).toBe(paquete1);
+    expect(centroFacturacion2.colaEntrada[2]).toBe(paquete2);
+});
+
+
+
 test("error en capacidad de cola al crear centro de facturacion", () => {
     expect(() => {
-        centroFacturacion2 = new CentroFacturacion(8);
+        centroFacturacion3 = new CentroFacturacion(8);
     }).toThrow("Capacidad de cola debe ser entre 3 y 6");
 });
 
 test("error al crear centro de facturacion sin capacidad de cola", () => {
     expect(() => {
-        centroFacturacion2 = new CentroFacturacion();
+        centroFacturacion3 = new CentroFacturacion();
     }).toThrow("Debe ingresar capacidad de cola");
 });
 
