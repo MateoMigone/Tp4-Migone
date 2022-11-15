@@ -16,9 +16,6 @@ function Local(nom){
         centro.recibirPaquete(this.colaSalida.shift()):
         centro.demorarReciboPaquete();
     }
-    this.avanzarTiempo() = function(){
-        
-    }
 }
 
 module.exports = Local;
