@@ -2,7 +2,7 @@ const CentroFacturacion = require('./CentroFacturacion');
 const Paquete = require('./Paquete');
 
 var centroFacturacion;
-
+var centroFacturacion2;
 var paquete0;
 var paquete1;
 var paquete2;
@@ -10,6 +10,7 @@ var paquete3;
 var paquete4;
 beforeEach(function () {
     centroFacturacion = new CentroFacturacion(5);
+    centroFacturacion2 = new CentroFacturacion(6);
     Paquete.prototype.numero = 0;
     paquete0 = new Paquete(1,[["remera",4],["buzo",2]],8);
     paquete1 = new Paquete(2,[["remera",10],["buzo",8]],6);
