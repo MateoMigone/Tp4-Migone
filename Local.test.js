@@ -9,6 +9,7 @@ beforeEach(function () {
     localA = new Local("A");
     localB = new Local("B");
     centroFacturacion = new CentroFacturacion(5);
+    Paquete.prototype.numero = NaN;
 });
 
 test("crear local", () => {
@@ -32,7 +33,6 @@ test("generar paquetes en distintos locales", () => {
 });
 
 test("generar hasta 5 paquetes por unidad de tiempo por local", () => {
-    Paquete.prototype.numero = NaN;
     localA.generarPaquete(1,[["remera",4],["buzo",2]],8);
     localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
     localA.generarPaquete(2,[["teclado",5]],6);
@@ -49,7 +49,6 @@ test("generar hasta 5 paquetes por unidad de tiempo por local", () => {
 });
 
 test("pasar paquete", () => {
-    Paquete.prototype.numero = NaN;
     localA.generarPaquete(1,[["remera",4],["buzo",2]],8);
     localA.pasarPaquete(centroFacturacion);
     expect(localA.colaSalida.length).toBe(0);
