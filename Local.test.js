@@ -31,6 +31,23 @@ test("generar paquetes en distintos locales", () => {
     expect(localB.colaSalida[2].numero).toBe(5);
 });
 
+test("generar hasta 5 paquetes por unidad de tiempo por local", () => {
+    Paquete.prototype.numero = NaN;
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],8);
+    localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
+    localA.generarPaquete(2,[["teclado",5]],6);
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],6);
+    localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
+    localA.generarPaquete(2,[["teclado",5]],6);
+    expect(localA.colaSalida[0].numero).toBe(0);
+    expect(localA.colaSalida[1].numero).toBe(1);
+    expect(localA.colaSalida[2].numero).toBe(2);
+    expect(localA.colaSalida[3].numero).toBe(3);
+    expect(localA.colaSalida[4].numero).toBe(4);
+    expect(localA.colaSalida[5]).toBe(undefined);
+    
+});
+
 test("pasar paquete", () => {
     Paquete.prototype.numero = NaN;
     localA.generarPaquete(1,[["remera",4],["buzo",2]],8);
