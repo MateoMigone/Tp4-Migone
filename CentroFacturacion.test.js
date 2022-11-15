@@ -3,6 +3,7 @@ const CentroFacturacion = require('./CentroFacturacion');
 const Paquete = require('./Paquete');
 
 test("crear centro de facturacion", () => {
+    centroFacturacion = new CentroFacturacion(5);
     expect(centroFacturacion.capacidadProcesamiento).toBe(3);
     expect(centroFacturacion.capacidadCola).toBe(5);
     expect(centroFacturacion.colaEntrada.length).toBe(0);
