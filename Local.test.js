@@ -5,7 +5,6 @@ const Paquete = require('./Paquete');
 var localA;
 var localB;
 var centroFacturacion;
-var generarPaquete;
 beforeEach(function () {
     localA = new Local("A");
     localB = new Local("B");
@@ -40,3 +39,4 @@ test("pasar paquete", () => {
     expect(centroFacturacion.colaEntrada.length).toBe(1);
     expect(centroFacturacion.colaEntrada[0].numero).toBe(0); 
 });
+
