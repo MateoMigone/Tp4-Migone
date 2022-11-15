@@ -70,16 +70,16 @@ test("pasar paquetes del centro de facturacion al centro de calidad", () => {
 });
 
 test("pasar paquetes del centro de calidad al centro de distribucion", () => {
+    centroCalidad.recibirPaquete(paquete0);
+    centroCalidad.recibirPaquete(paquete1);
+    centroCalidad.recibirPaquete(paquete2);
+    centroCalidad.procesarPaquetes();
+    centroCalidad.pasarPaquetes(centroDistribucion);
+    expect(centroCalidad.colaEntrada[0]).toBe(paquete2);
+    expect(centroCalidad.colaEntrada[1]).toBe(paquete0);
+    expect(centroCalidad.colaSalida.length).toBe(0);
+    expect(centroDistribucion.colaEntrada[0]).toBe(paquete1);
     expect(centroDistribucion.colaEntrada.length).toBe(0);
-    // centroCalidad.recibirPaquete(paquete0);
-    // centroCalidad.recibirPaquete(paquete1);
-    // centroCalidad.recibirPaquete(paquete2);
-    // centroCalidad.procesarPaquetes();
-    // centroCalidad.pasarPaquetes(centroDistribucion);
-    // expect(centroCalidad.colaEntrada[0]).toBe(paquete2);
-    // expect(centroCalidad.colaEntrada[1]).toBe(paquete0);
-    // expect(centroCalidad.colaSalida.length).toBe(0);
-    // expect(centroDistribucion.colaEntrada[0]).toBe(paquete1);
 });
 
 test("pasar paquetes del centro de distribucion al centro de facturacion", () => {
