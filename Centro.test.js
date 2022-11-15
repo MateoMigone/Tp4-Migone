@@ -1,5 +1,6 @@
 const Centro = require('./Centro');
 const CentroFacturacion = require('./CentroFacturacion');
+const CentroCalidad = require('./CentroCalidad');
 const Paquete = require('./Paquete');
 
 var centroFacturacion;
