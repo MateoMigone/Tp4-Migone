@@ -18,8 +18,7 @@ function Local(nom){
         }
     }
     this.avanzarTiempo= function(){
-        this.pasarPaquetes(centro);
-        this.capacidadGenerarPaquetes = 5;
+
     }
 }
 
