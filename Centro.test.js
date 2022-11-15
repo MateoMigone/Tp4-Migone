@@ -1,4 +1,4 @@
-
+const Centro = require('./Centro');
 const CentroFacturacion = require('./CentroFacturacion');
 
 test("crear centro de facturacion", () => {
