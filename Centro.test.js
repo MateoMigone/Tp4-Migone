@@ -89,7 +89,7 @@ test("pasar paquetes del centro de distribucion al centro de facturacion", () =>
     centroDistribucion.recibirPaquete(paquete4);
     centroDistribucion.procesarPaquetes();
     centroDistribucion.pasarPaquetes(centroFacturacion);
-    expect(centroFacturacion.colaEntrada[0]).toBe(paquete0);
+    expect(centroFacturacion.colaEntrada[0]).toBe(undefined);
     // expect(centroDistribucion.colaEntrada.length).toBe(0);
     // expect(centroDistribucion.colaSalida.length).toBe(0);
     // expect(centroFacturacion.colaEntrada[0]).toBe(paquete4);

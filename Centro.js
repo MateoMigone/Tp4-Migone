@@ -4,7 +4,10 @@ function Centro(capCol){
     this.colaEntrada = [];
     this.colaSalida = [];
     this.recibirPaquete = function(paquete){
-        this.colaEntrada.push(paquete);
+        if(this.espacioEnCola() != 0){
+            this.colaEntrada.push(paquete);
+        }
+        
     }
     this.procesarPaquetes = function(){
         this.colaEntrada.sort((a, b) => a.urgencia - b.urgencia);
@@ -17,7 +20,7 @@ function Centro(capCol){
     }
     this.pasarPaquetes = function(centro){
         this.colaSalida.sort((a, b) => a.urgencia - b.urgencia);
-        for(let i = centro.espacioEnCola(); i != 0 && this.colaSalida.length != 0; i--){
+        for(let i = this.colaSalida.length; this.colaSalida.length != 0; i--){
             centro.recibirPaquete(this.colaSalida.shift());
             
         }
