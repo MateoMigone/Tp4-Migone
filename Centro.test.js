@@ -57,13 +57,13 @@ test("pasar paquetes", () => {
     centroFacturacion.recibirPaquete(paquete3);
     centroFacturacion.recibirPaquete(paquete4);
     centroFacturacion.procesarPaquetes();
-    centroFacturacion.pasarPaquetes(centroFacturacion2);
+    centroFacturacion.pasarPaquetes(centroCalidad);
     expect(centroFacturacion.colaEntrada[0]).toBe(paquete0);
     expect(centroFacturacion.colaEntrada[1]).toBe(paquete3);
     expect(centroFacturacion.colaSalida.length).toBe(0);
-    expect(centroFacturacion2.colaEntrada[0]).toBe(paquete4);
-    expect(centroFacturacion2.colaEntrada[1]).toBe(paquete1);
-    expect(centroFacturacion2.colaEntrada[2]).toBe(paquete2);
+    expect(centroCalidad.colaEntrada[0]).toBe(paquete4);
+    expect(centroCalidad.colaEntrada[1]).toBe(paquete1);
+    expect(centroCalidad.colaEntrada[2]).toBe(paquete2);
 });
 
 
