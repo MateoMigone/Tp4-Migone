@@ -74,7 +74,7 @@ test("pasar paquetes del centro de calidad al centro de distribucion", () => {
     centroCalidad.recibirPaquete(paquete1);
     centroCalidad.recibirPaquete(paquete2);
     centroCalidad.procesarPaquetes();
-    centroCalidad.pasarPaquetes(centroCalidad);
+    centroCalidad.pasarPaquetes(centroDistribucion);
     expect(centroCalidad.colaEntrada[0]).toBe(paquete2);
     expect(centroCalidad.colaEntrada[1]).toBe(paquete0);
     expect(centroCalidad.colaSalida.length).toBe(0);
