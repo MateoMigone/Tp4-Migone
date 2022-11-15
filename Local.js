@@ -17,6 +17,10 @@ function Local(nom){
             centro.recibirPaquete(this.colaSalida.shift());
         }
     }
+    this.avanzarTiempo= function(){
+        this.pasarPaquetes(centro);
+        this.capacidadGenerarPaquetes = 5;
+    }
 }
 
 module.exports = Local;
