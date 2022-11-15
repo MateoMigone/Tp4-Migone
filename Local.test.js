@@ -69,4 +69,19 @@ test("pasar paquetes hasta que se llene la cola del proximo centro", () => {
     expect(centroFacturacion.colaEntrada[3].numero).toBe(4);   
 });
 
+test("generar paquetes y avanzar tiempo", () => {
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],8);
+    localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
+    localA.generarPaquete(2,[["teclado",5]],6);
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],6);
+    localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
+    localA.avanzarTiempo(centroFacturacion);
+    expect(localA.capacidadGenerarPaquetes).toBe(5);
+    expect(localA.colaSalida[0].numero).toBe(0);
+    expect(centroFacturacion.colaEntrada[0].numero).toBe(1);
+    expect(centroFacturacion.colaEntrada[1].numero).toBe(2);
+    expect(centroFacturacion.colaEntrada[2].numero).toBe(3); 
+    expect(centroFacturacion.colaEntrada[3].numero).toBe(4);   
+});
+
 
