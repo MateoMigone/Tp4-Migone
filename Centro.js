@@ -23,3 +23,5 @@ function Centro(capCol){
         }
     }
 }
+
+module.exports = Centro;
