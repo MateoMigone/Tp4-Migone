@@ -1,3 +1,4 @@
+const Centro = require('./Centro');
 const CentroCalidad = require('./CentroCalidad');
 const Paquete = require('./Paquete');
 
