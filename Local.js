@@ -17,7 +17,7 @@ function Local(nom){
             centro.recibirPaquete(this.colaSalida.shift());
         }
     }
-    this.avanzarTiempo= function(){
+    this.avanzarTiempo= function(centro){
         this.capacidadGenerarPaquetes = 5;
         this.pasarPaquetes(centro);
     }
