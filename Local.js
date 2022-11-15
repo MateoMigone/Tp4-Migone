@@ -18,7 +18,8 @@ function Local(nom){
         }
     }
     this.avanzarTiempo= function(){
-
+        this.capacidadGenerarPaquetes = 5;
+        
     }
 }
 
