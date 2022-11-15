@@ -21,5 +21,4 @@ function Centro(capCol){
             centro.recibirPaquete(this.colaSalida.shift());
         }
     }
-
 }
