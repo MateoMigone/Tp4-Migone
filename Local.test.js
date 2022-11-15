@@ -64,9 +64,9 @@ test("pasar paquetes hasta que se llene la cola del proximo centro", () => {
     localA.pasarPaquetes(centroFacturacion);
     expect(localA.colaSalida[0].numero).toBe(0);
     expect(centroFacturacion.colaEntrada[0].numero).toBe(1);
-    expect(centroFacturacion.colaEntrada[0].numero).toBe(2);
-    expect(centroFacturacion.colaEntrada[0].numero).toBe(3); 
-    expect(centroFacturacion.colaEntrada[0].numero).toBe(4);   
+    expect(centroFacturacion.colaEntrada[1].numero).toBe(2);
+    expect(centroFacturacion.colaEntrada[2].numero).toBe(3); 
+    expect(centroFacturacion.colaEntrada[3].numero).toBe(4);   
 });
 
 
