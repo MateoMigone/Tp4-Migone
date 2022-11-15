@@ -1,6 +1,15 @@
 const CentroCalidad = require('./CentroCalidad');
 const Paquete = require('./Paquete');
 
+test("crear centro de calidad", () => {
+    centroCalidad = new CentroCalidad(4);
+    expect(centroCalidad.capacidadProcesamiento).toBe(1);
+    expect(centroCalidad.capacidadCola).toBe(4);
+    expect(centroCalidad.colaEntrada.length).toBe(0);
+    expect(centroCalidad.colaSalida.length).toBe(0);
+    expect(Centro.prototype.isPrototypeOf(CentroCalidad.prototype)).toBe(true);
+});
+
 test("error en capacidad de cola al crear centro de calidad", () => {
     expect(() => {
         centroCalidad = new CentroCalidad(8);
