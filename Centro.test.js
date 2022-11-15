@@ -1,10 +1,12 @@
 const Centro = require('./Centro');
 const CentroFacturacion = require('./CentroFacturacion');
 const CentroCalidad = require('./CentroCalidad');
+const CentroDistribucion = require('./CentroDistribucion');
 const Paquete = require('./Paquete');
 
 var centroFacturacion;
 var centroCalidad;
+var centroDistribucion;
 var paquete0;
 var paquete1;
 var paquete2;
@@ -13,6 +15,7 @@ var paquete4;
 beforeEach(function () {
     centroFacturacion = new CentroFacturacion(5);
     centroCalidad = new CentroCalidad(4);
+    centroDistribucion = new CentroDistribucion(22);
     Paquete.prototype.numero = 0;
     paquete0 = new Paquete(1,[["remera",4],["buzo",2]],8);
     paquete1 = new Paquete(2,[["remera",10],["buzo",8]],6);
@@ -23,12 +26,12 @@ beforeEach(function () {
 
 
 
-test("recibir paquete", () => {
+test("recibir paquete en centro de facturacion", () => {
     centroFacturacion.recibirPaquete(paquete0);
     expect(centroFacturacion.colaEntrada[0]).toBe(paquete0);
 });
 
-test("consultar cuanto espacio hay en la cola", () => {
+test("consultar cuanto espacio hay en la cola de un centro", () => {
     centroFacturacion.recibirPaquete(paquete0);
     centroFacturacion.recibirPaquete(paquete1);
     centroFacturacion.recibirPaquete(paquete2);
@@ -36,7 +39,7 @@ test("consultar cuanto espacio hay en la cola", () => {
     expect(centroFacturacion.espacioEnCola()).toBe(1);
 });
 
-test("procesar paquetes", () => {
+test("procesar paquetes en centro de facturacion", () => {
     centroFacturacion.recibirPaquete(paquete0);
     centroFacturacion.recibirPaquete(paquete1);
     centroFacturacion.recibirPaquete(paquete2);
@@ -50,7 +53,7 @@ test("procesar paquetes", () => {
     expect(centroFacturacion.colaSalida[2]).toBe(paquete2);
 });
 
-test("pasar paquetes", () => {
+test("pasar paquetes del centro de facturacion al centro de calidad", () => {
     centroFacturacion.recibirPaquete(paquete0);
     centroFacturacion.recibirPaquete(paquete1);
     centroFacturacion.recibirPaquete(paquete2);
@@ -64,6 +67,18 @@ test("pasar paquetes", () => {
     expect(centroCalidad.colaEntrada[0]).toBe(paquete4);
     expect(centroCalidad.colaEntrada[1]).toBe(paquete1);
     expect(centroCalidad.colaEntrada[2]).toBe(paquete2);
+});
+
+test("pasar paquetes del centro de calidad al centro de distribucion", () => {
+    centroCalidad.recibirPaquete(paquete0);
+    centroCalidad.recibirPaquete(paquete1);
+    centroCalidad.recibirPaquete(paquete2);
+    centroCalidad.procesarPaquetes();
+    centroCalidad.pasarPaquetes(centroCalidad);
+    expect(centroCalidad.colaEntrada[0]).toBe(paquete2);
+    expect(centroCalidad.colaEntrada[1]).toBe(paquete0);
+    expect(centroCalidad.colaSalida.length).toBe(0);
+    expect(centroDistribucion.colaEntrada[0]).toBe(paquete1);
 });
 
 
