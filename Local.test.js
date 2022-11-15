@@ -1,4 +1,3 @@
-
 const CentroFacturacion = require('./CentroFacturacion');
 const Local = require('./Local');
 const Paquete = require('./Paquete');
