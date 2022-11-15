@@ -37,6 +37,11 @@ test("consultar cuanto espacio hay en la cola", () => {
     expect(centroFacturacion.espacioEnCola()).toBe(1);
 });
 
+test("demorar recibo de paquete", () => {
+    centroFacturacion.demorarReciboPaquete();
+    expect(centroFacturacion.colaEntrada[0]).toBe(undefined);
+});
+
 test("procesar paquetes", () => {
     centroFacturacion.recibirPaquete(paquete0);
     centroFacturacion.recibirPaquete(paquete1);

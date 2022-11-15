@@ -12,7 +12,12 @@ function Local(nom){
         }  
     };
     this.pasarPaquete = function(centro){
-        centro.colaEntrada.push(this.colaSalida.shift());
+        centro.espacioEnCola() != 0 ?
+        centro.recibirPaquete(this.colaSalida.shift()):
+        centro.demorarReciboPaquete();
+    }
+    this.avanzarTiempo() = function(){
+        
     }
 }
 

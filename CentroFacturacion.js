@@ -12,6 +12,8 @@ function CentroFacturacion(capCol){
     this.recibirPaquete = function(paquete){
         this.colaEntrada.push(paquete);
     }
+    this.demorarReciboPaquete = function(){
+    }
     this.procesarPaquetes = function(){
         this.colaEntrada.sort((a, b) => a.urgencia - b.urgencia);
         for(let i=0; i < this.capacidadProcesamiento; i++){
