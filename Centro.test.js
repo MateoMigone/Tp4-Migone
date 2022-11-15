@@ -79,7 +79,7 @@ test("pasar paquetes del centro de calidad al centro de distribucion", () => {
     expect(centroCalidad.colaEntrada[1]).toBe(paquete0);
     expect(centroCalidad.colaSalida.length).toBe(0);
     expect(centroDistribucion.colaEntrada[0]).toBe(paquete1);
-    expect(centroDistribucion.colaEntrada.length).toBe(0);
+    expect(centroFacturacion.colaEntrada.length).toBe(0);
 });
 
 test("pasar paquetes del centro de distribucion al centro de facturacion", () => {
