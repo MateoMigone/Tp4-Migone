@@ -8,7 +8,7 @@ var centroFacturacion;
 beforeEach(function () {
     localA = new Local("A");
     localB = new Local("B");
-    centroFacturacion = new CentroFacturacion(5);
+    centroFacturacion = new CentroFacturacion(4);
     Paquete.prototype.numero = NaN;
 });
 
@@ -45,14 +45,28 @@ test("generar hasta 5 paquetes por unidad de tiempo por local", () => {
     expect(localA.colaSalida[3].numero).toBe(3);
     expect(localA.colaSalida[4].numero).toBe(4);
     expect(localA.colaSalida[5]).toBe(undefined);
-    
 });
 
 test("pasar paquete", () => {
     localA.generarPaquete(1,[["remera",4],["buzo",2]],8);
-    localA.pasarPaquete(centroFacturacion);
+    localA.pasarPaquetes(centroFacturacion);
     expect(localA.colaSalida.length).toBe(0);
     expect(centroFacturacion.colaEntrada.length).toBe(1);
     expect(centroFacturacion.colaEntrada[0].numero).toBe(0); 
 });
+
+test("pasar paquetes hasta que se llene la cola del proximo centro", () => {
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],8);
+    localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
+    localA.generarPaquete(2,[["teclado",5]],6);
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],6);
+    localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
+    localA.pasarPaquetes(centroFacturacion);
+    expect(localA.colaSalida[0].numero).toBe(0);
+    expect(centroFacturacion.colaEntrada[0].numero).toBe(1);
+    expect(centroFacturacion.colaEntrada[0].numero).toBe(2);
+    expect(centroFacturacion.colaEntrada[0].numero).toBe(3); 
+    expect(centroFacturacion.colaEntrada[0].numero).toBe(4);   
+});
+
 

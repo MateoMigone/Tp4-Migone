@@ -11,10 +11,11 @@ function Local(nom){
             this.capacidadGenerarPaquetes--;
         }  
     };
-    this.pasarPaquete = function(centro){
-        centro.espacioEnCola() != 0 ?
-        centro.recibirPaquete(this.colaSalida.shift()):
-        centro.demorarReciboPaquete();
+    this.pasarPaquetes = function(centro){
+        this.colaSalida.sort((a, b) => a.urgencia - b.urgencia);
+        for(let i = centro.espacioEnCola(); i != 0 || this.colaSalida.length != 0; i--){
+            centro.recibirPaquete(this.colaSalida.shift());
+        }
     }
 }
 
