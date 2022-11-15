@@ -3,7 +3,7 @@ const CentroFacturacion = require('./CentroFacturacion');
 const Paquete = require('./Paquete');
 
 var centroFacturacion;
-var centroFacturacion2;
+var centroCalidad;
 var paquete0;
 var paquete1;
 var paquete2;
@@ -11,7 +11,7 @@ var paquete3;
 var paquete4;
 beforeEach(function () {
     centroFacturacion = new CentroFacturacion(5);
-    centroFacturacion2 = new CentroFacturacion(6);
+    centroCalidad = new CentroCalidad(4);
     Paquete.prototype.numero = 0;
     paquete0 = new Paquete(1,[["remera",4],["buzo",2]],8);
     paquete1 = new Paquete(2,[["remera",10],["buzo",8]],6);
@@ -20,13 +20,7 @@ beforeEach(function () {
     paquete4 = new Paquete(3,[["celular",3]],4);
 });
 
-test("crear centro de facturacion", () => {
-    expect(centroFacturacion.capacidadProcesamiento).toBe(3);
-    expect(centroFacturacion.capacidadCola).toBe(5);
-    expect(centroFacturacion.colaEntrada.length).toBe(0);
-    expect(centroFacturacion.colaSalida.length).toBe(0);
-    expect(Centro.prototype.isPrototypeOf(CentroFacturacion.prototype)).toBe(true);
-});
+
 
 test("recibir paquete", () => {
     centroFacturacion.recibirPaquete(paquete0);

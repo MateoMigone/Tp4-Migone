@@ -1,5 +1,14 @@
+const Centro = require('./Centro');
 const CentroFacturacion = require('./CentroFacturacion');
 const Paquete = require('./Paquete');
+
+test("crear centro de facturacion", () => {
+    expect(centroFacturacion.capacidadProcesamiento).toBe(3);
+    expect(centroFacturacion.capacidadCola).toBe(5);
+    expect(centroFacturacion.colaEntrada.length).toBe(0);
+    expect(centroFacturacion.colaSalida.length).toBe(0);
+    expect(Centro.prototype.isPrototypeOf(CentroFacturacion.prototype)).toBe(true);
+});
 
 test("error en capacidad de cola al crear centro de facturacion", () => {
     expect(() => {
