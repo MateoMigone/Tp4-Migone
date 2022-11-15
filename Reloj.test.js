@@ -14,3 +14,9 @@ test("avanzar unidad de tiempo", () => {
     reloj.avanzarTiempo();
     expect(reloj.tiempo).toBe(1);
 });
+
+test("avanzar dos unidades de tiempo", () => {
+    reloj.avanzarTiempo();
+    reloj.avanzarTiempo();
+    expect(reloj.tiempo).toBe(2);
+});
