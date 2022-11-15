@@ -19,7 +19,7 @@ function Local(nom){
     }
     this.avanzarTiempo= function(){
         this.capacidadGenerarPaquetes = 5;
-        
+        this.pasarPaquetes(centro);
     }
 }
 
