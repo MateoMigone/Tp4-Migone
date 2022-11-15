@@ -1,4 +1,3 @@
-const Centro = require('./Centro');
 const CentroFacturacion = require('./CentroFacturacion');
 const Paquete = require('./Paquete');
 
