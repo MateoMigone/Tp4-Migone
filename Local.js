@@ -1,6 +1,10 @@
 const Paquete = require("./Paquete");
 
 function Local(nom){
+    if(nom === undefined){
+        throw new Error("Debe pasarse el nombre del local por parametro al crearlo");
+    }
+
     this.nombre = nom;
     this.colaSalida = [];
     this.capacidadGenerarPaquetes = 5;
