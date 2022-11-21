@@ -84,4 +84,9 @@ test("generar paquetes y avanzar tiempo", () => {
     expect(centroFacturacion.colaEntrada[3].numero).toBe(4);   
 });
 
+test("error al crear local sin nombre", () => {
+    expect(() => {
+        local = new Local();
+    }).toThrow("Debe pasarse el nombre del local por parametro al crearlo");
+});
 
