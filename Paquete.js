@@ -5,9 +5,9 @@ function Paquete (dest,lisProd,urg){
     if (lisProd.length == 0){
         throw new Error("Debe ingresar lista con un producto por lo menos");
     }
-    if (isNaN(Paquete.prototype.numero)){
-        Paquete.prototype.numero = 0;
-    }
+    // if (isNaN(Paquete.prototype.numero)){
+    //     Paquete.prototype.numero = 0;
+    // }
     this.destino = dest;
     this.listaProductos = lisProd;
     this.urgencia = urg;
