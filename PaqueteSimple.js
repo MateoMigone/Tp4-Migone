@@ -1,6 +1,6 @@
 const Paquete = require('./Paquete');
 
-function Paquete (dest,lisProd,urg){
+function PaqueteSimple (dest,lisProd,urg){
     Paquete.call(this,dest,urg);
     if (dest === undefined || lisProd === undefined || urg === undefined){
         throw new Error("Debe ingresar todos los datos necesarios");
