@@ -16,7 +16,7 @@ test("crear paquete unificado", () => {
     expect(paqueteUnificado.destino).toBe(2);
     expect(paqueteUnificado.listaPaquetes.includes(paquete0)).toBe(true);
     expect(paqueteUnificado.listaPaquetes.includes(paquete1)).toBe(true);
-    expect(paquete0.urgencia).toBe(4);
+    expect(paqueteUnificado.urgencia).toBe(4);
     expect(paqueteUnificado.numero).toBe(2);
 });
 
