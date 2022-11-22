@@ -9,7 +9,7 @@ beforeEach(function () {
     Paquete.prototype.numero = 0;
     paquete0 = new PaqueteSimple(2,[["remera",10],["buzo",8]],6);
     paquete1 = new PaqueteSimple(2,[["teclado",5]],4);
-    paqueteUnificado = new PaqueteSimple([paquete0,paquete1]);
+    paqueteUnificado = new PaqueteUnificado([paquete0,paquete1]);
 });
 
 test("crear paquete", () => {
