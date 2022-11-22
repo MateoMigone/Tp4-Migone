@@ -12,6 +12,7 @@ function PaqueteUnificado (paquetes){
             urg = paquetes[i].urgencia
         }
     }
+    this.urgencia = urg;
 }
 
 PaqueteUnificado.prototype = Object.create(Paquete.prototype);
