@@ -1,6 +1,7 @@
 const CentroFacturacion = require('./CentroFacturacion');
 const Local = require('./Local');
 const Paquete = require('./Paquete');
+const PaqueteSimple = require('./PaqueteSimple')
 
 var localA;
 var localB;

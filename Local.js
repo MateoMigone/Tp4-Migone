@@ -1,4 +1,4 @@
-const Paquete = require("./Paquete");
+const PaqueteSimple = require("./PaqueteSimple");
 
 function Local(nom){
     if(nom === undefined){
@@ -10,7 +10,7 @@ function Local(nom){
     this.capacidadGenerarPaquetes = 5;
     this.generarPaquete = function (destino,listaProductos,urgencia){
         if (this.capacidadGenerarPaquetes != 0){
-            paquete = new Paquete(destino,listaProductos,urgencia);
+            paquete = new PaqueteSimple(destino,listaProductos,urgencia);
             this.colaSalida.push(paquete);
             this.capacidadGenerarPaquetes--;
         }  

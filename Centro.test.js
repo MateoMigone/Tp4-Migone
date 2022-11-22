@@ -1,8 +1,8 @@
-const Centro = require('./Centro');
 const CentroFacturacion = require('./CentroFacturacion');
 const CentroCalidad = require('./CentroCalidad');
 const CentroDistribucion = require('./CentroDistribucion');
 const Paquete = require('./Paquete');
+const PaqueteSimple = require('./PaqueteSimple');
 
 var centroFacturacion;
 var centroCalidad;
@@ -17,11 +17,11 @@ beforeEach(function () {
     centroCalidad = new CentroCalidad(4);
     centroDistribucion = new CentroDistribucion(22);
     Paquete.prototype.numero = 0;
-    paquete0 = new Paquete(1,[["remera",4],["buzo",2]],8);
-    paquete1 = new Paquete(2,[["remera",10],["buzo",8]],6);
-    paquete2 = new Paquete(2,[["teclado",5]],6);
-    paquete3 = new Paquete(4,[["pantalon",3],["campera",1]],8);
-    paquete4 = new Paquete(3,[["celular",3]],4);
+    paquete0 = new PaqueteSimple(1,[["remera",4],["buzo",2]],8);
+    paquete1 = new PaqueteSimple(2,[["remera",10],["buzo",8]],6);
+    paquete2 = new PaqueteSimple(2,[["teclado",5]],6);
+    paquete3 = new PaqueteSimple(4,[["pantalon",3],["campera",1]],8);
+    paquete4 = new PaqueteSimple(3,[["celular",3]],4);
 });
 
 

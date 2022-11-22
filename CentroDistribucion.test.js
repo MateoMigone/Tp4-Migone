@@ -1,6 +1,5 @@
 const Centro = require('./Centro');
 const CentroDistribucion = require('./CentroDistribucion');
-const Paquete = require('./Paquete');
 
 test("crear centro de distribucion", () => {
     centroDistribucion = new CentroDistribucion(22);

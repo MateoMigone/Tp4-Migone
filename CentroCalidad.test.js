@@ -1,6 +1,5 @@
 const Centro = require('./Centro');
 const CentroCalidad = require('./CentroCalidad');
-const Paquete = require('./Paquete');
 
 test("crear centro de calidad", () => {
     centroCalidad = new CentroCalidad(4);
