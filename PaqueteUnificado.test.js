@@ -12,7 +12,7 @@ beforeEach(function () {
     paqueteUnificado = new PaqueteUnificado([paquete0,paquete1]);
 });
 
-test("crear paquete", () => {
+test("crear paquete unificado", () => {
     expect(paqueteUnificado.destino).toBe(2);
     expect(paqueteUnificado.listaPaquetes.includes(paquete0)).toBe(true);
     expect(paqueteUnificado.listaPaquetes.includes(paquete1)).toBe(true);
