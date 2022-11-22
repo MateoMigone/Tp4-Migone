@@ -1,7 +1,7 @@
 const Paquete = require('./Paquete');
 
 function PaqueteUnificado (paquetes){
-    Paquete.call(this,dest,urg);
+    Paquete.call(this);
     this.listaPaquetes = [];
 }
 
