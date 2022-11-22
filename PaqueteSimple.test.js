@@ -1,4 +1,5 @@
 const Paquete = require('./Paquete');
+const PaqueteSimple = require('./PaqueteSimple');
 
 var paquete0;
 var paquete1;
