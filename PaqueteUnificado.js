@@ -1,6 +1,9 @@
 const Paquete = require('./Paquete');
 
 function PaqueteUnificado (paquetes){
+    if(paquetes.length < 2){
+        throw new Error("Debe ingresar una lista con dos o mas paquetes");
+    }
     Paquete.call(this);
     this.listaPaquetes = [];
     this.destino = paquetes[0].destino;
