@@ -13,16 +13,6 @@ function CentroDistribucion(capCol){
     this.capacidadProcesamiento = 10;
     
     this.unificarPaquetes = function(){
-        lisDestinos = obtenerDestinosDeColaEntrada();
-        listaAux = obtenerListaDePaquetesAUnificar(lisDestinos);
-        for (let i=0; i<listaAux.length; i++){
-            listaAux.legth<2 ? listaAux.push(listaAux.shift()[0]) 
-            : listaAux.push(new PaqueteUnificado(listaAux.shift()));
-        }
-        this.colaEntrada = listaAux;
-    }
-
-    var obtenerDestinosDeColaEntrada = function (){
         this.colaEntrada.sort((a, b) => a.destino - b.destino);
         destinos = [];
 
@@ -32,7 +22,16 @@ function CentroDistribucion(capCol){
             }
         }
 
-        return destinos;
+        listaAux = obtenerListaDePaquetesAUnificar(destinos);
+        for (let i=0; i<listaAux.length; i++){
+            listaAux.legth<2 ? listaAux.push(listaAux.shift()[0]) 
+            : listaAux.push(new PaqueteUnificado(listaAux.shift()));
+        }
+        this.colaEntrada = listaAux;
+    }
+
+    var obtenerDestinosDeColaEntrada = function (){
+        
     }
 
     var obtenerListaDePaquetesAUnificar = function (lisDestinos){
