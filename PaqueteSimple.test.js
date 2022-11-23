@@ -29,7 +29,7 @@ test("crear vario paquetes con distintos numeros de paquete", () => {
 test("preguntar si llego en tiempo", () => {
     paquete0.tiempoInicial = 0;
     paquete0.tiempoFinal = 9;
-    expect(paquete0.llegoEnTiempo()).toBe("El paquete 0 llegó a tiempo");
+    expect(paquete0.llegoEnTiempo()).toBe("El paquete 0 llega 1 unidad/es tarde");
     
 });
 
