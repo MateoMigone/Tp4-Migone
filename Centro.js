@@ -26,15 +26,15 @@ function Centro(capCol){
             if(centro === undefined){
                 let paqueteEntregado = this.colaSalida.shift();
                 paqueteEntregado.tiempoFinal = reloj.tiempo;
-                paqueteEntregado.llegoEnTiempo();
+                console.log(paqueteEntregado.llegoEnTiempo());
             }
             else{
                 centro.recibirPaquete(this.colaSalida.shift())
             }
         }
-    this.avanzarTiempo = function(centro){
+    this.avanzarTiempo = function(centro,reloj){
         this.procesarPaquetes();
-        this.pasarPaquetes();
+        this.pasarPaquetes(centro,reloj);
     }
     }
 }
