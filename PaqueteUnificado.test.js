@@ -18,6 +18,7 @@ test("crear paquete unificado", () => {
     expect(paqueteUnificado.listaPaquetes.includes(paquete1)).toBe(true);
     expect(paqueteUnificado.urgencia).toBe(4);
     expect(paqueteUnificado.numero).toBe(2);
+    expect(paqueteUnificado.tiempoInicial).toBe(0);
 });
 
 test("error al crear paquete unificado con una lista que contenga menos de 2 paquetes", () => {

@@ -9,13 +9,16 @@ function PaqueteUnificado (paquetes){
     this.destino = paquetes[0].destino;
     this.listaPaquetes.push(paquetes[0]); 
     var urg = paquetes[0].urgencia;
+    var tInicial;
     for(i = 1; i < paquetes.length; i++){
         this.listaPaquetes.push(paquetes[i]);
         if (paquetes[i].urgencia < urg){
-            urg = paquetes[i].urgencia
+            urg = paquetes[i].urgencia;
+            tInicial = paquetes[i].tiempoInicial;
         }
     }
     this.urgencia = urg;
+    this.tiempoInicial = tInicial;
 }
 
 PaqueteUnificado.prototype = Object.create(Paquete.prototype);

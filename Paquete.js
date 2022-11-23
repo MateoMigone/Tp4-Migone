@@ -5,7 +5,7 @@ function Paquete (dest,urg){
     this.destino = dest;
     this.urgencia = urg;
     this.numero = Paquete.prototype.numero++;
-    this.tiempoInicial;
+    this.tiempoInicial = 0;
     this.tiempoFinal;
     this.llegoEnTiempo = function(){
         var x = this.urgencia - (this.tiempoFinal-this.tiempoInicial);

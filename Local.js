@@ -8,9 +8,9 @@ function Local(nom){
     this.nombre = nom;
     this.colaSalida = [];
     this.capacidadGenerarPaquetes = 5;
-    this.generarPaquete = function (destino,listaProductos,urgencia){
+    this.generarPaquete = function (destino,listaProductos,urgencia,tiempoInicial){
         if (this.capacidadGenerarPaquetes != 0){
-            paquete = new PaqueteSimple(destino,listaProductos,urgencia);
+            paquete = new PaqueteSimple(destino,listaProductos,urgencia,tiempoInicial);
             this.colaSalida.push(paquete);
             this.capacidadGenerarPaquetes--;
         }  
