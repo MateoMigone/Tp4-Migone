@@ -31,7 +31,6 @@ beforeEach(function () {
 });
 
 test("crear mapa", () => {
-    mapa = new Mapa([]);
     expect(mapa.matriz[0][0]).toBe(localA);
     expect(mapa.matriz[0][1]).toBe(centroFacturacion);
     expect(mapa.matriz[0][2]).toBe(centroCalidad);
