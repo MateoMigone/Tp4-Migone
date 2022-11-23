@@ -22,28 +22,28 @@ function CentroDistribucion(capCol){
         this.colaEntrada = listaAux;
     }
 
-    var obtenerDestinosDeColaEntrada = function (){
-        this.colaEntrada.sort((a, b) => a.destino - b.destino);
+    var obtenerDestinosDeColaEntrada = function (colaEntrada){
+        colaEntrada.sort((a, b) => a.destino - b.destino);
         destinos = [];
 
-        for(let i=0; i<this.colaEntrada.length; i++){
-            if(!destinos.includes(this.colaEntrada[i].destino)){
-                destinos.push(this.colaEntrada[i].destino);
+        for(let i=0; i<colaEntrada.length; i++){
+            if(!destinos.includes(colaEntrada[i].destino)){
+                destinos.push(colaEntrada[i].destino);
             }
         }
 
         return destinos;
     }
 
-    var obtenerListaDePaquetesAUnificar = function (lisDestinos){
+    var obtenerListaDePaquetesAUnificar = function (colaEntrada,lisDestinos){
         aux = [];
         colaAux = [];
 
         for(let i=0; i<lisDestinos.length; i++){
             aux = [];
-            for(let j=0; j<this.colaEntrada.length ; j++){
-                if(this.colaEntrada[j].destino == lisDestinos[i]){
-                    aux.push(this.colaEntrada[j]);
+            for(let j=0; j<colaEntrada.length ; j++){
+                if(colaEntrada[j].destino == lisDestinos[i]){
+                    aux.push(colaEntrada[j]);
                 }
             }
             colaAux.push(aux);
