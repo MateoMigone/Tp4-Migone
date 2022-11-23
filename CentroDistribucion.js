@@ -13,7 +13,6 @@ function CentroDistribucion(capCol){
     this.capacidadProcesamiento = 10;
     
     this.unificarPaquetes = function(){
-        this.colaEntrada.sort((a, b) => a.destino - b.destino);
         lisDestinos = obtenerDestinosDeColaEntrada();
         listaAux = obtenerListaDePaquetesAUnificar();
         for (let i=0; i<listaAux.length; i++){
@@ -23,7 +22,8 @@ function CentroDistribucion(capCol){
         this.colaEntrada = listaAux;
     }
 
-    var obtenerDestinosDeColaEntrada(){
+    var obtenerDestinosDeColaEntrada = function (){
+        this.colaEntrada.sort((a, b) => a.destino - b.destino);
         destinos = [];
 
         for(let i=0; i<this.colaEntrada.length; i++){
