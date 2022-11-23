@@ -12,6 +12,8 @@ function Paquete (dest,urg){
         var respuesta;
         x >= 0 ? respuesta = "El paquete " + this.numero + " llegó a tiempo"
         : respuesta = "El paquete " + this.numero + " llega " + x*(-1) + " unidad/es tarde";
+        
+        return respuesta; 
     }
 }
 
