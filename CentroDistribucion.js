@@ -23,7 +23,7 @@ function CentroDistribucion(capCol){
         this.colaEntrada = listaAux;
     }
 
-    var obtenerDestinosDeColaEntrada = function (){
+    var obtenerDestinosDeColaEntrada(){
         destinos = [];
 
         for(let i=0; i<this.colaEntrada.length; i++){
