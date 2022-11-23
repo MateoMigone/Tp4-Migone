@@ -1,3 +1,4 @@
+const Local = require('./Local');
 const CentroFacturacion = require('./CentroFacturacion');
 const CentroCalidad = require('./CentroCalidad');
 const CentroDistribucion = require('./CentroDistribucion');
