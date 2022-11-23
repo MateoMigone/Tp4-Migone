@@ -1,3 +1,5 @@
+const Reloj = require('./Reloj');
+
 function Centro(capCol){
     this.capacidadProcesamiento;
     this.capacidadCola = capCol;
@@ -18,12 +20,22 @@ function Centro(capCol){
     this.espacioEnCola = function(){
         return (this.capacidadCola - this.colaEntrada.length - this.colaSalida.length);
     }
-    this.pasarPaquetes = function(centro){
+    this.pasarPaquetes = function(centro,reloj){
         this.colaSalida.sort((a, b) => a.urgencia - b.urgencia);
         for(let i = this.colaSalida.length; this.colaSalida.length != 0; i--){
-            centro.recibirPaquete(this.colaSalida.shift());
-            
+            if(centro === undefined){
+                let paqueteEntregado = this.colaSalida.shift();
+                paqueteEntregado.tiempoFinal = reloj.tiempo;
+                paqueteEntregado.llegoEnTiempo();
+            }
+            else{
+                centro.recibirPaquete(this.colaSalida.shift())
+            }
         }
+    this.avanzarTiempo = function(centro){
+        this.procesarPaquetes();
+        this.pasarPaquetes();
+    }
     }
 }
 

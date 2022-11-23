@@ -26,6 +26,13 @@ test("crear vario paquetes con distintos numeros de paquete", () => {
     expect(paquete2.numero).toBe(2);
 });
 
+test("preguntar si llego en tiempo", () => {
+    paquete0.tiempoInicial = 0;
+    paquete0.tiempoFinal = 6;
+    expect(paquete0.llegoEnTiempo()).toBe("El paquete 0 llegó a tiempo");
+    
+});
+
 test("error al crear paquete sin destino, productos ni urgencia", () => {
     expect(() => {
         paquete = new PaqueteSimple();
