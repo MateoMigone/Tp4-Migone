@@ -29,12 +29,12 @@ test("unificar paquetes", () => {
     centroDistribucion.recibirPaquete(paquete2);
     centroDistribucion.recibirPaquete(paquete3);
     centroDistribucion.recibirPaquete(paquete4);
-    centroDistribucion.unificarPaquetes(centroDistribucion.colaEntrada);
-    expect(centroDistribucion.colaEntrada[0].listaPaquetes.includes(paquete0)).toBe(true);
-    expect(centroDistribucion.colaEntrada[0].listaPaquetes.includes(paquete3)).toBe(true);
-    expect(centroDistribucion.colaEntrada[1].listaPaquetes.includes(paquete1)).toBe(true);
-    expect(centroDistribucion.colaEntrada[1].listaPaquetes.includes(paquete2)).toBe(true);
-    expect(centroDistribucion.colaEntrada[1].listaPaquetes.includes(paquete4)).toBe(true);
+    centroDistribucion.unificarPaquetes();
+    expect(centroDistribucion.colaEntrada[1].listaPaquetes.includes(paquete0)).toBe(true);
+    expect(centroDistribucion.colaEntrada[1].listaPaquetes.includes(paquete3)).toBe(true);
+    expect(centroDistribucion.colaEntrada[0].listaPaquetes.includes(paquete1)).toBe(true);
+    expect(centroDistribucion.colaEntrada[0].listaPaquetes.includes(paquete2)).toBe(true);
+    expect(centroDistribucion.colaEntrada[0].listaPaquetes.includes(paquete4)).toBe(true);
     expect(centroDistribucion.colaEntrada.length).toBe(2);
 });
 
