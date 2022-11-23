@@ -9,8 +9,7 @@ function Paquete (dest,urg){
     this.tiempoFinal;
     this.llegoEnTiempo = function(){
         var x = this.urgencia - (this.tiempoFinal-this.tiempoInicial);
-        x >= 0 ? console.log("El paquete " + this.numero + " llegó a tiempo")
-        : console.log("El paquete " + this.numero + " llega " + x*(-1) + " unidad/es tarde");
+        return x >= 0; 
     }
 }
 
