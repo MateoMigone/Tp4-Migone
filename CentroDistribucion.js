@@ -14,7 +14,7 @@ function CentroDistribucion(capCol){
     
     this.unificarPaquetes = function(){
         lisDestinos = obtenerDestinosDeColaEntrada();
-        listaAux = obtenerListaDePaquetesAUnificar();
+        listaAux = obtenerListaDePaquetesAUnificar(lisDestinos);
         for (let i=0; i<listaAux.length; i++){
             listaAux.legth<2 ? listaAux.push(listaAux.shift()[0]) 
             : listaAux.push(new PaqueteUnificado(listaAux.shift()));
