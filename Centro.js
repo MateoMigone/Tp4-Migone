@@ -32,10 +32,6 @@ function Centro(capCol){
                 centro.recibirPaquete(this.colaSalida.shift())
             }
         }
-    this.avanzarTiempo = function(centro,reloj){
-        this.procesarPaquetes();
-        this.pasarPaquetes(centro,reloj);
-    }
     }
 }
 
