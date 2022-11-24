@@ -19,7 +19,7 @@ function Local(nom){
         this.colaSalida.sort((a, b) => a.urgencia - b.urgencia);
         for(let i = centro.espacioEnCola(); i != 0 && this.colaSalida.length != 0; i--){
             centro.recibirPaquete(this.colaSalida.shift());
-        }
+        } 
     }
     this.avanzarTiempo= function(centro){
         this.capacidadGenerarPaquetes = 5;
