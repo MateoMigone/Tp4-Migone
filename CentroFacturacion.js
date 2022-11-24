@@ -9,7 +9,7 @@ function CentroFacturacion(capCol){
         throw new Error("Debe ingresar capacidad de cola");
     }
     this.capacidadProcesamiento = 3;
-}
+} 
 
 CentroFacturacion.prototype = Object.create(Centro.prototype);
 CentroFacturacion.prototype.constructor = CentroFacturacion;
