@@ -22,7 +22,7 @@ function Centro(capCol){
     }
     this.pasarPaquetes = function(centro,tFinal){
         this.colaSalida.sort((a, b) => a.urgencia - b.urgencia);
-        for(let i = this.colaSalida.length; this.colaSalida.length != 0; i--){
+        for(let i = this.colaSalida.length; i > 0; i--){
             if(centro === undefined){
                 let paqueteEntregado = this.colaSalida.shift();
                 paqueteEntregado.tiempoFinal = tFinal;
