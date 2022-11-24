@@ -6,7 +6,7 @@ function Mapa(mat){
     this.avanzarTiempo = function(reloj){
         reloj.avanzarTiempo();
         for (let i=this.matriz[0].length; i>0; i--){
-            this.matriz[0][i].avanzarTiempo(this.matriz[0][i+1]);
+            this.matriz[0][i].avanzarTiempo(this.matriz[0][i+1],reloj);
         }
     }
 }
