@@ -9,11 +9,6 @@ function CentroFacturacion(capCol){
         throw new Error("Debe ingresar capacidad de cola");
     }
     this.capacidadProcesamiento = 3;
-
-    this.avanzarTiempo = function(centro,reloj){
-        this.procesarPaquetes();
-        this.pasarPaquetes(centro,reloj);
-    }
 } 
 
 CentroFacturacion.prototype = Object.create(Centro.prototype);

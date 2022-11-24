@@ -33,7 +33,10 @@ function Centro(capCol){
             }
         }
     }
-    
+    this.avanzarTiempo = function(centro,reloj){
+        this.procesarPaquetes();
+        this.pasarPaquetes(centro,reloj);
+    }
 }
 
 module.exports = Centro;
