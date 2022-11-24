@@ -24,9 +24,8 @@ function Centro(capCol){
         this.colaSalida.sort((a, b) => a.urgencia - b.urgencia);
         for(let i = this.colaSalida.length; this.colaSalida.length != 0; i--){
             if(centro === undefined){
-                var paqueteEntregado = this.colaSalida.shift();
-                paqueteEntregado.tiempoFinal = tFinal;
-                console.log(paqueteEntregado.llegoEnTiempo());
+                this.colaSalida.shift().tiempoFinal = tFinal;
+                
             }
             else{
                 centro.recibirPaquete(this.colaSalida.shift())

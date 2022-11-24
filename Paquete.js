@@ -6,7 +6,7 @@ function Paquete (dest,urg){
     this.urgencia = urg;
     this.numero = Paquete.prototype.numero++;
     this.tiempoInicial = 0;
-    this.tiempoFinal=0;
+    this.tiempoFinal;
     this.llegoEnTiempo = function(){
         var x = this.urgencia - (this.tiempoFinal-this.tiempoInicial);
         var respuesta;
