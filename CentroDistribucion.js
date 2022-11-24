@@ -22,11 +22,11 @@ function CentroDistribucion(capCol){
         this.colaEntrada = listaAux;
     }
 
-    this.avanzarTiempo = function(centro,reloj){
-        this.unificarPaquetes();
-        this.procesarPaquetes();
-        this.pasarPaquetes(centro,reloj);
-    }
+    // this.avanzarTiempo = function(centro,reloj){
+    //     this.unificarPaquetes();
+    //     this.procesarPaquetes();
+    //     this.pasarPaquetes(centro,reloj);
+    // }
 
     var obtenerDestinosDeColaEntrada = function (colaEntrada){
         colaEntrada.sort((a, b) => a.destino - b.destino);
