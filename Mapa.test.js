@@ -36,7 +36,7 @@ test("generar paquetes y avanzar 1 tiempo en el mapa", () => {
     mapa.matriz[0][0].generarPaquete(0,[["teclado",5]],6,reloj.tiempo);
     mapa.matriz[0][0].generarPaquete(0,[["pantalon",3],["campera",1]],8,reloj.tiempo);
     mapa.matriz[0][0].generarPaquete(0,[["celular",3]],4,reloj.tiempo);
-    mapa.avanzarTiempo(reloj);
+    reloj.avanzarTiempo(mapa);
     // expect(mapa.matriz[0][0].colaSalida.length).toBe(0);
     // expect(mapa.matriz[0][1].colaEntrada[0]).toBe(paquete0);
     // expect(mapa.matriz[0][1].colaEntrada[1]).toBe(paquete3);
