@@ -20,12 +20,12 @@ function Centro(capCol){
     this.espacioEnCola = function(){
         return (this.capacidadCola - this.colaEntrada.length - this.colaSalida.length);
     }
-    this.pasarPaquetes = function(centro,reloj){
+    this.pasarPaquetes = function(centro,tFinal){
         this.colaSalida.sort((a, b) => a.urgencia - b.urgencia);
         for(let i = this.colaSalida.length; this.colaSalida.length != 0; i--){
             if(centro === undefined){
                 let paqueteEntregado = this.colaSalida.shift();
-                paqueteEntregado.tiempoFinal = reloj.tiempo;
+                paqueteEntregado.tiempoFinal = tFinal;
                 console.log(paqueteEntregado.llegoEnTiempo());
             }
             else{
