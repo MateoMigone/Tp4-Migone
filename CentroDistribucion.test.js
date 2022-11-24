@@ -3,16 +3,24 @@ const CentroDistribucion = require('./CentroDistribucion');
 const Paquete = require('./Paquete');
 const PaqueteSimple = require('./PaqueteSimple');
 const PaqueteUnificado = require('./PaqueteUnificado');
+const Reloj = require('./Reloj');
 
 var centroDistribucion;
+var reloj;
+var paquete0;
+var paquete1;
+var paquete2;
+var paquete3;
+var paquete4;
 beforeEach(function () {
+    reloj = new Reloj();
     centroDistribucion = new CentroDistribucion(22);
     Paquete.prototype.numero = 0;
-    paquete0 = new PaqueteSimple(4,[["remera",4],["buzo",2]],8);
-    paquete1 = new PaqueteSimple(2,[["remera",10],["buzo",8]],6);
-    paquete2 = new PaqueteSimple(2,[["teclado",5]],6);
-    paquete3 = new PaqueteSimple(4,[["pantalon",3],["campera",1]],8);
-    paquete4 = new PaqueteSimple(2,[["celular",3]],4);
+    paquete0 = new PaqueteSimple(4,[["remera",4],["buzo",2]],8,reloj.tiempo);
+    paquete1 = new PaqueteSimple(2,[["remera",10],["buzo",8]],6,reloj.tiempo);
+    paquete2 = new PaqueteSimple(2,[["teclado",5]],6,reloj.tiempo);
+    paquete3 = new PaqueteSimple(4,[["pantalon",3],["campera",1]],8,reloj.tiempo);
+    paquete4 = new PaqueteSimple(2,[["celular",3]],4,reloj.tiempo);
 });
 
 test("crear centro de distribucion", () => {

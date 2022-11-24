@@ -1,14 +1,17 @@
 const Paquete = require('./Paquete');
 const PaqueteSimple = require('./PaqueteSimple');
+const Reloj = require('./Reloj');
 
 var paquete0;
 var paquete1;
 var paquete2;
+var reloj;
 beforeEach(function () {
+    reloj = new Reloj();
     Paquete.prototype.numero = 0;
-    paquete0 = new PaqueteSimple(1,[["remera",4],["buzo",2]],8);
-    paquete1 = new PaqueteSimple(2,[["remera",10],["buzo",8]],6);
-    paquete2 = new PaqueteSimple(2,[["teclado",5]],6);
+    paquete0 = new PaqueteSimple(1,[["remera",4],["buzo",2]],8,reloj.tiempo);
+    paquete1 = new PaqueteSimple(2,[["remera",10],["buzo",8]],6,reloj.tiempo);
+    paquete2 = new PaqueteSimple(2,[["teclado",5]],6,reloj.tiempo);
 });
 
 test("crear paquete", () => {

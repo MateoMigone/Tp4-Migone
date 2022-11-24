@@ -1,12 +1,14 @@
 const CentroFacturacion = require('./CentroFacturacion');
 const Local = require('./Local');
 const Paquete = require('./Paquete');
-const PaqueteSimple = require('./PaqueteSimple')
+const PaqueteSimple = require('./PaqueteSimple');
+const Reloj = require('./Reloj');
 
 var localA;
 var localB;
 var centroFacturacion;
 beforeEach(function () {
+    reloj = new Reloj();
     localA = new Local("A");
     localB = new Local("B");
     centroFacturacion = new CentroFacturacion(4);
@@ -19,12 +21,12 @@ test("crear local", () => {
 });
 
 test("generar paquetes en distintos locales", () => {
-    localA.generarPaquete(1,[["remera",4],["buzo",2]],8);
-    localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
-    localA.generarPaquete(2,[["teclado",5]],6);
-    localB.generarPaquete(1,[["remera",4],["buzo",2]],6);
-    localB.generarPaquete(2,[["remera",10],["buzo",8]],6);
-    localB.generarPaquete(2,[["teclado",5]],6);
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],8,reloj.tiempo);
+    localA.generarPaquete(2,[["remera",10],["buzo",8]],6,reloj.tiempo);
+    localA.generarPaquete(2,[["teclado",5]],6,reloj.tiempo);
+    localB.generarPaquete(1,[["remera",4],["buzo",2]],6,reloj.tiempo);
+    localB.generarPaquete(2,[["remera",10],["buzo",8]],6,reloj.tiempo);
+    localB.generarPaquete(2,[["teclado",5]],6,reloj.tiempo);
     expect(localA.colaSalida[0].numero).toBe(0);
     expect(localA.colaSalida[1].numero).toBe(1);
     expect(localA.colaSalida[2].numero).toBe(2);
@@ -34,11 +36,11 @@ test("generar paquetes en distintos locales", () => {
 });
 
 test("generar hasta 5 paquetes por unidad de tiempo por local", () => {
-    localA.generarPaquete(1,[["remera",4],["buzo",2]],8);
-    localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
-    localA.generarPaquete(2,[["teclado",5]],6);
-    localA.generarPaquete(1,[["remera",4],["buzo",2]],6);
-    localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],8,reloj.tiempo);
+    localA.generarPaquete(2,[["remera",10],["buzo",8]],6,reloj.tiempo);
+    localA.generarPaquete(2,[["teclado",5]],6,reloj.tiempo);
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],6,reloj.tiempo);
+    localA.generarPaquete(2,[["remera",10],["buzo",8]],6,reloj.tiempo);
     localA.generarPaquete(2,[["teclado",5]],6);
     expect(localA.colaSalida[0].numero).toBe(0);
     expect(localA.colaSalida[1].numero).toBe(1);
@@ -49,7 +51,7 @@ test("generar hasta 5 paquetes por unidad de tiempo por local", () => {
 });
 
 test("pasar paquete", () => {
-    localA.generarPaquete(1,[["remera",4],["buzo",2]],8);
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],8,reloj.tiempo);
     localA.pasarPaquetes(centroFacturacion);
     expect(localA.colaSalida.length).toBe(0);
     expect(centroFacturacion.colaEntrada.length).toBe(1);
@@ -57,11 +59,11 @@ test("pasar paquete", () => {
 });
 
 test("pasar paquetes hasta que se llene la cola del proximo centro", () => {
-    localA.generarPaquete(1,[["remera",4],["buzo",2]],8);
-    localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
-    localA.generarPaquete(2,[["teclado",5]],6);
-    localA.generarPaquete(1,[["remera",4],["buzo",2]],6);
-    localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],8,reloj.tiempo);
+    localA.generarPaquete(2,[["remera",10],["buzo",8]],6,reloj.tiempo);
+    localA.generarPaquete(2,[["teclado",5]],6,reloj.tiempo);
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],6,reloj.tiempo);
+    localA.generarPaquete(2,[["remera",10],["buzo",8]],6,reloj.tiempo);
     localA.pasarPaquetes(centroFacturacion);
     expect(localA.colaSalida[0].numero).toBe(0);
     expect(centroFacturacion.colaEntrada[0].numero).toBe(1);
@@ -71,11 +73,11 @@ test("pasar paquetes hasta que se llene la cola del proximo centro", () => {
 });
 
 test("generar paquetes y avanzar tiempo", () => {
-    localA.generarPaquete(1,[["remera",4],["buzo",2]],8);
-    localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
-    localA.generarPaquete(2,[["teclado",5]],6);
-    localA.generarPaquete(1,[["remera",4],["buzo",2]],6);
-    localA.generarPaquete(2,[["remera",10],["buzo",8]],6);
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],8,reloj.tiempo);
+    localA.generarPaquete(2,[["remera",10],["buzo",8]],6,reloj.tiempo);
+    localA.generarPaquete(2,[["teclado",5]],6,reloj.tiempo);
+    localA.generarPaquete(1,[["remera",4],["buzo",2]],6,reloj.tiempo);
+    localA.generarPaquete(2,[["remera",10],["buzo",8]],6,reloj.tiempo);
     localA.avanzarTiempo(centroFacturacion);
     expect(localA.capacidadGenerarPaquetes).toBe(5);
     expect(localA.colaSalida[0].numero).toBe(0);
