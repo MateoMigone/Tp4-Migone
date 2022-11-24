@@ -37,6 +37,7 @@ test("generar paquetes y avanzar 1 tiempo en el mapa", () => {
     mapa.matriz[0][0].generarPaquete(0,[["pantalon",3],["campera",1]],8,reloj.tiempo);
     mapa.matriz[0][0].generarPaquete(0,[["celular",3]],4,reloj.tiempo);
     reloj.avanzarTiempo(mapa);
+    localA.avanzarTiempo(centroFacturacion);
     expect(mapa.matriz[0][0].colaSalida[0].numero).toBe(0);
     // expect(mapa.matriz[0][1].colaEntrada[0].numero).toBe(0);
     // expect(mapa.matriz[0][1].colaEntrada[1].numero).toBe(3);
