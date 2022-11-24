@@ -22,8 +22,8 @@ function Local(nom){
         } 
     }
     this.avanzarTiempo = function(centro){
-        this.capacidadGenerarPaquetes = 5;
         this.pasarPaquetes(centro);
+        this.capacidadGenerarPaquetes = 5;
     }
 }
 
